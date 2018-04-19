@@ -160,3 +160,177 @@ var app18=new Vue({
         }
     }
 })
+
+
+var app19=new Vue({
+    el: '#app19',
+    data: {
+        numbers: [ 1, 2, 3, 4, 5 ]
+    },
+    computed: {
+        evenNumbers: function () {
+            return this.numbers.filter(function (number) {
+                return number % 2 === 0
+            })
+        }
+    },
+    methods: {
+        even: function (numbers) {
+            return numbers.filter(function (number) {
+                return number % 2 === 0
+            })
+        }
+    }
+})
+
+
+var app20=new Vue({
+    el:"#app20",
+    data:{
+        items:[
+            {msg:"qeqw"},
+            {msg:"sss"}
+        ]
+    }
+})
+
+Vue.component('todo-item', {
+    template: '\
+    <li>\
+      {{ title }}\
+      <button v-on:click="$emit(\'remove\')">X</button>\
+    </li>\
+  ',
+    props: ['title']
+})
+
+new Vue({
+    el: '#todo-list-example',
+    data: {
+        newTodoText: '',
+        todos: [
+            {
+                id: 1,
+                title: 'Do the dishes',
+            },
+            {
+                id: 2,
+                title: 'Take out the trash',
+            },
+            {
+                id: 3,
+                title: 'Mow the lawn'
+            }
+        ],
+        nextTodoId: 4
+    },
+    methods: {
+        addNewTodo: function () {
+            this.todos.push({
+                id: this.nextTodoId++,
+                title: this.newTodoText
+            })
+            this.newTodoText = ''
+        }
+    }
+})
+
+var example11 = new Vue({
+    el: '#example-11',
+    data: {
+        counter: 0
+    }
+})
+
+var example22 = new Vue({
+    el: '#example-22',
+    data: {
+        name: 'Vue.js'
+    },
+    // 在 `methods` 对象中定义方法
+    methods: {
+        greet: function (event) {
+            // `this` 在方法里指向当前 Vue 实例
+            alert('Hello ' + this.name + '!')
+            // `event` 是原生 DOM 事件
+            if (event) {
+                alert(event.target.tagName)
+            }
+        }
+    }
+})
+// 也可以用 JavaScript 直接调用方法
+//example22.greet() // => 'Hello Vue.js!'
+new Vue({
+    el: '#example-3',
+    methods: {
+        say: function (message) {
+            alert(message)
+        },
+        warn: function (message, event) {
+            // 现在我们可以访问原生事件对象
+            if (event) event.preventDefault()
+            alert(message)
+        }
+    }
+})
+new Vue({
+    el: '#app21',
+    data:{
+        message:"",
+        message2:"",
+        checked:false
+    }
+})
+
+new Vue({
+    el: '#example-33',
+    data: {
+        checkedNames: []
+    }
+})
+
+new Vue({
+    el: '#example-4',
+    data: {
+        picked: ''
+    }
+})
+new Vue({
+    el: '#example-5',
+    data: {
+        selected: ''
+    }
+})
+new Vue({
+    el: '#example-6',
+    data: {
+        selected: []
+    }
+})
+new Vue({
+    el: '#app23',
+    data: {
+        selected: 'A',
+        options: [
+            { text: 'One', value: 'A' },
+            { text: 'Two', value: 'B' },
+            { text: 'Three', value: 'C' }
+        ]
+    }
+})
+
+
+new Vue({
+    el: '#app24',
+    data: {
+        picked: 'A',
+        toggle: 'A',
+        selected: 'A',
+        options: [
+            { text: 'One', value: 'A' },
+            { text: 'Two', value: 'B' },
+            { text: 'Three', value: 'C' }
+        ]
+    }
+})
