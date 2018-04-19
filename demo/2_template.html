@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2 模板语法</title>
+
+
+    <script src="../resources/js/vue.min.js"></script>
+
+</head>
+<body>
+    <h2>2、 模板语法</h2>
+    <!--插值-->
+    <span>Message: {{ msg }}</span>
+
+    <!--文本-->
+    <span v-once>这个将不会改变: {{ msg }}</span>
+    <p id="app6">Using mustaches: {{ rawHtml }}</p>
+
+    <!--原始html-->
+    <p id="app7">Using v-html directive: <span v-html="rawHtml"> </span></p>
+
+    <!--使用 JavaScript 表达式-->
+
+
+    <!--指令-->
+    <p v-if="seen">现在你看到我了</p>
+
+    <!--3 计算属性和侦听器-->
+    <h2>3、 计算属性和侦听器</h2>
+    <div id="example">
+        <p>Original message: "{{ message }}"</p>
+        <p>Computed reversed message: "{{ reversedMessage }}"</p>
+    </div>
+
+    <div id="demo">{{ fullName }}</div>
+
+
+    <div id="watch-example">
+        <p>
+            Ask a yes/no question:
+            <input v-model="question">
+        </p>
+        <p>{{ answer }}</p>
+    </div>
+
+    <!--4 Class 与 Style 绑定-->
+    <h2>4、 Class 与 Style 绑定</h2>
+    <h3>4.1、 绑定 HTML Class</h3>
+    <div  id = "app10" class="static" class="static"
+         v-bind:class="{ active: isActive, 'text-danger': hasError }">
+        app10
+    </div>
+
+    <h3>4.2、 绑定内联样式</h3>
+    <div id ="app11"
+         v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">样式</div>
+    <div id="app12" v-bind:style="styleObject">app12</div>
+
+    <h2>5、 条件渲染</h2>
+    <h3>v-if</h3>
+    <div id="app13">
+        <h1 v-if="ok">Yes</h1>
+        <h1 v-else>No</h1>
+    </div>
+
+    <div v-if="Math.random() > 0.5">
+        Now you see me
+    </div>
+    <div v-else>
+        Now you don't
+    </div>
+
+    <div id ="app14">
+        <div v-if="type === 'A'">
+            A
+        </div>
+        <div v-else-if="type === 'B'">
+            B
+        </div>
+        <div v-else-if="type === 'C'">
+            C
+        </div>
+        <div v-else>
+            Not A/B/C
+        </div>
+    </div>
+    <h2>6、 列表渲染</h2>
+    <ul id="example-1">
+        <li v-for="item in items">
+            {{ item.message }}
+        </li>
+    </ul>
+    <h3>用 v-for 把一个数组对应为一组元素</h3>
+    <ul id="example-2">
+        <li v-for="(item, index) in items">
+            {{ parentMessage }} - {{ index }} - {{ item.message }}
+        </li>
+    </ul>
+    <h3>一个对象的 v-for</h3>
+    <ul id="v-for-object" class="demo">
+
+        <li v-for="value in object">
+            {{ value }}
+        </li>
+
+        <div v-for="(value, key, index) in object">
+            {{ index }}. {{ key }}: {{ value }}
+        </div>
+
+    </ul>
+    <div id="app18">
+        <div   v-for="(value, key) in object">
+            {{ key }}: {{ value }}
+        </div>
+    </div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+<script src="../resources/js/2_template.js"></script>
+</html>
