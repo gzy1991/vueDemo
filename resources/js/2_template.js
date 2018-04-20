@@ -334,3 +334,10 @@ new Vue({
         ]
     }
 })
+
+new Vue({
+    el: '#prop-example-2',
+    data: {
+        parentMsg: 'Message from parent'
+    }
+})
