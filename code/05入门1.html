@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="app">
+        <p>{{message}}</p>
+        <h v-text="message"></h>
+
+    </div>
+    <script type="text/javascript" src="../resources/js/vue.js"></script>
+    <script>
+        // alert(Vue)
+        /* 实例 Vue
+        *  挂载视图 可以使用id，也可以时候用class */
+
+        var app=new Vue({
+            el:"#app",
+            data:{
+                message:"今天是星期五 !"
+            }
+        })
+    </script>
+    <!--
+        1.使用Vue库
+            1.1引入
+            1.2实例 new Vue({})
+
+        2 注意事项
+            el:挂载视图
+                2.1 id
+                2.2 class
+            data : 数据模型
+                定义数据模型
+                    data:{
+                        key : value
+                    }
+
+        2
+
+
+
+
+
+
+    -->
+</body>
+</html>

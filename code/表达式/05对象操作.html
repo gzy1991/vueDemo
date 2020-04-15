@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue公开课-源码时代</title>
+    <!-- 1.vue.js -->
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+<!-- 2.视图容器 -->
+<div id="app">
+    <h1>
+        {{ messgae.name }}
+        {{ "姓名:"+messgae.name }}
+        {{ "年龄:"+messgae.age }}
+    </h1>
+
+
+</div>
+
+<script>
+    // 3.Vue实例
+    let json1 = {
+        name:"张三",
+        sex:"男",
+        age:20
+    }
+
+    var vm = new Vue({
+        el: '#app', // 挂载dom
+        data: { // 准备数据
+            messgae:json1
+        },
+    });
+</script>
+</body>
+
+</html>
